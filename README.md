@@ -3,7 +3,7 @@ This is a joint work with Prof. Mayru Chen in Applied Mathematics Department, NS
 
 This research has been published in The 29th South Taiwan Statistics Conference: Applied Probability Section.
 
-## Mathematic
+## Math Work
 
 The main topic about this research is to find the **asymptotic behavior** of Brownian motion and its extensions such as fractional Brownian motion. The Law of Iterated Logarithm (LIL) is to describe the magnitude of a stochastic process while time goes to infinty. Below is the mathematical fomular for LIL for standard Brownian motion.
 
@@ -18,7 +18,7 @@ In this paper, we provide the closed-form of the asymptotic functions for these 
 
 ## Simulation
 
-In the simulation folder, I provide the r code to simulate the extensions of Brownian motion. The source code of generation of standard Brownian motion comes from the r package ```sde```. Below is the simulations of the stochastic processes I mention above.
+In the simulation folder, I provide the r code to simulate the extensions of Brownian motion. The source code of generation of standard Brownian motion comes from the r package ```sde```. Below is the simulations of the stochastic processes I mentioned above.
 <p align="center">
 <img height="200" src="https://github.com/simonchung87/Applied-Probability/blob/main/Simulation/MPS.png">
 <img height="200" src="https://github.com/simonchung87/Applied-Probability/blob/main/Simulation/RBM.png">
