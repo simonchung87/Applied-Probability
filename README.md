@@ -24,3 +24,6 @@ In the simulation folder, I provide the r code to simulate the extensions of Bro
 <img height="200" src="https://github.com/simonchung87/Applied-Probability/blob/main/Simulation/RBM.png">
 <img height="200" src="https://github.com/simonchung87/Applied-Probability/blob/main/Simulation/MRBM.png">
 </p>
+
+
+<a><img src="https://visitor-badge.glitch.me/badge?page_id=simonchung87.503192919" alt="visitors"></a>
