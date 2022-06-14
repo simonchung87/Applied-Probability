@@ -6,10 +6,10 @@ The main topic about this research is to find the **asymptotic behavior** of Bro
 $$\limsup\limits_{t\rightarrow \infty} \frac{B(t)}{\sqrt{2t \ln \ln t}} = 1\quad \mathrm{a.s.}$$
 
 The stochastic processes I was investigating are:
-- Maximum Process of Absolute Value of Standard Brownian Motion $M(t) = \max\limits_{s\leqslant t}{|B(s)|}$
-<p align="center">
-<img height="300" src="https://github.com/simonchung87/Applied-Probability/blob/main/simulation%20graph/MPS.png">
-</p>
-- Reflected Fraction Brownian Motion $$Q_{B_{H}}(t)=B_H(t)-ct+\max(Q_{B_{H}}(0),-\inf\limits_{s\in [0,t]}(B_H(s)-cs))$$, where $B_H$ is the standard fractional Brownian motion
+- Maximum Process of Absolute Value of Standard Brownian Motion $M_{|B|}(t) = \max\limits_{s\leqslant t}{|B(s)|}$
+- Reflected Fraction Brownian Motion $$Q_{B_{H}}(t)=B_H(t)-ct+\max(Q_{B_{H}}(0),-\inf\limits_{s\in [0,t]}(B_H(s)-cs)),$$ where $B_H$ is the standard fractional Brownian motion
+- Maximum Process of Reflected Fraction Brownian Motion $M_{Q_{B_{H}}}(t) = \max\limits_{s\leqslant t}{Q_{B_{H}}(s)}$
 
-- Maximum Process of Reflected Fraction Brownian Motion $\max\limits_{s\leqslant t}{Q_{B_{H}}(s)}$
+In the simulation folder, I provide the r code to simulate the extensions of Brownian motion. The source code of generation of standard Brownian motion comes from the r package ```sde```.
+
+In this paper, we provide the closed-form of the asymptotic functions for these three processes and rigorous mathematical proof.
