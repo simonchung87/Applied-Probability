@@ -7,7 +7,9 @@ $$\limsup\limits_{t\rightarrow \infty} \frac{B(t)}{\sqrt{2t \ln \ln t}} = 1\quad
 
 The stochastic processes I was investigating are:
 - Maximum Process of Absolute Value of Standard Brownian Motion $M(t) = \max\limits_{s\leqslant t}{|B(s)|}$
-
-- Reflected Fraction Brownian Motion $Q_{B_{H}}(t)=B_H(t)-ct+\max(Q_{B_{H}}(0),-\inf\limits_{s\in [0,t]}(B_H(s)-cs))$, where $B_H$ is the standard fractional Brownian motion
+<p align="center">
+<img height="300" src="https://github.com/simonchung87/Applied-Probability/blob/main/simulation%20graph/MPS.png">
+</p>
+- Reflected Fraction Brownian Motion $$Q_{B_{H}}(t)=B_H(t)-ct+\max(Q_{B_{H}}(0),-\inf\limits_{s\in [0,t]}(B_H(s)-cs))$$, where $B_H$ is the standard fractional Brownian motion
 
 - Maximum Process of Reflected Fraction Brownian Motion $\max\limits_{s\leqslant t}{Q_{B_{H}}(s)}$
