@@ -1,0 +1,20 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Law of Iterated Logarithm for Extensions of
+  Brownian motion
+message: >-
+  If you use the code or theorem in the paper, please
+  cite it as below.
+type: software
+authors:
+  - given-names: Simon
+    family-names: Chung
+    email: simon05301998@gmail.com
+    affiliation: 'Applied Mathematics Department, NSYSU'
+  - given-names: May-ru
+    family-names: Chen
+    affiliation: 'Applied Mathematics Department, NSYSU'
+    email: chenmr@math.nsysu.edu.tw
