@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{sectsty}
+\usepackage{CJKutf8}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{subfiles}%subfile
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newtheorem{thm}{\sc Theorem}
+\newtheorem{lemma}{\sc Lemma}
+\newtheorem{prop}{\sc Proposition}[section]
+\newtheorem{defin}{\sc Definition}
+\newtheorem{remark}{\sc Remark}[section]
+
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1
+}
+\title{\Huge Law of Iterated Logarithm for Extensions of Brownian motion}
+\author{\Large 鍾世民\\Simon Chung}
+\date{\empty}
+
+\begin{document}
+\begin{CJK*}{UTF8}{bsmi}
+\maketitle
+\vspace*{5.5cm}\par
+\begin{abstract}
+\fontsize{13pt}{12pt}   
+\selectfont
+\baselineskip 16pt
+Let $B = \{B(t):t \in \mathbb{R_{+}} \}$ be a standard Brownian motion. For  $M(t) = \max\limits_{s\leqslant t}{|B(s)|}$, we can prove that the Law of Iterated Logarithm (LIL) can be applied to this stochastic process with the same function in LIL for $B$. Consequently, let $B_H = \{B_H(t):t \in \mathbb{R}_+ \}$ be a fractional Brownian motion and for the stationary storage process $Q_{B_{H}}=\sup \limits_{-\infty<s\leqslant t}\left(B_{H}(t)-B_{H}(s)-(t-s)\right), t \geq 0$, after we finish the proof of LIL for $Q_{B_H}$, we prove that the LIL for $\max \limits_{s\leqslant t}Q_{B_{H}}(s)$ use the same function as with $Q_{B_H}$, which is $(2\ln{t}/A^2)^{\frac{1}{2(1-H)}}$.
+
+\end{abstract}\hspace{10pt}
+
+\keywords{Brownian motion ,Fractional Brownian motion, Reflected fractional Brownian motion, Maximum process, Law of iterated logarithm, Borel-Cantelli lemma}
+
+\newpage
+\fontsize{13pt}{12pt}
+\selectfont
+\baselineskip 18pt
+\section{Introduction and main results}
+The law of iterated logarithm(LIL) was firstly proposed by Khintchine \citep{khintchine1924satz} in 1924 in the purpose of describing the limit behavior of Bernoulli variables. From then on, LIL has been applied to more and more stochastic processes. In this project, we want to expend this study in the field of continuous stochastic processes. We start with standard Brownian motion.
+
+\begin{defin}
+\label{bm}
+	A real-valued stochastic process $B = \{B(t):t \in \mathbb{R_{+}} \}$ is a standard Brownian motion if it satisfies the following properties.
+	\begin{enumerate}
+        \item[(i)] $B(0)=0$ almost surely;
+		\item[(ii)] $B$ has stationary independent increments and $B(t)-B(s)\sim \mathcal{N}(0, t-s)$ for $0\leq s < t$;
+		\item[(iii)] the paths of $B$ are continuous almost surely.
+	\end{enumerate}
+\end{defin}
+
+The LIL for standard Brownian motion has been considered as the classic LIL, which appears in many textbooks as the following form
+\begin{equation}
+\limsup\limits_{t\rightarrow \infty} \frac{B(t)}{\sqrt{2t \ln \ln t}} = 1\quad \mathrm{a.s.}
+\end{equation}
+Therefore, we take this question even further by considering the cumulative maximum process of the absolute value of a standard Brownian motion.
+\begin{thm}
+\label{LIL_mabm}
+    Let $M(t) = \max\limits_{s\leqslant t}{|B(s)|}$. Then
+    $$\limsup\limits_{t\rightarrow \infty} \frac{M(t)}{\sqrt{2t \ln \ln t}} = 1\quad \mathrm{a.s.}$$
+\end{thm}
+
+By the definition of $|B(t)|$, this Brownian motion will reflect immediately while it hits 0, which is an easy physics model in reality. However, we consider a relatively difficult physics model which will stay in 0 for some time before bouncing back. But first, we take a look at a more general version of Brownian motion.
+
+\begin{defin}
+\label{fbm}
+    Let $B_H = \{B_H(t):t \in \mathbb{R}_+ \}$ be a standard fractional Brownian motion with Hurst parameter $H \in (0,1)$, which defined as a centered Gaussian process with covariance function
+    $$\mbox{Cov}(B_H(t),B_H(s)) = \frac{1}{2}\left(|t|^{2H}+|s|^{2H}-|t-s|^{2H}\right).$$
+\end{defin}
+
+Base on the standard fractional Brownian motion, a morerealistic model has been defined.
+
+\begin{defin}
+\label{rfbm}
+    Consider a reflected (at 0) fractional Brownian motion with drift $Q_{B_{H}}= \{B_H(t):t \in \mathbb{R_+} \}$, given by the following formula
+    $$Q_{B_{H}}(t)=B_H(t)-ct+\max\left\{Q_{B_{H}}(0),-\inf\limits_{s\in [0,t]}(B_H(s)-cs)\right\},$$
+    where $c>0$.
+\end{defin}
+
+The LIL for reflected fraction Brownian motion has been given by D{\c e}bicki and Kosi{\'n}ski \citep{almostsurelyconvergence} but without a clear proof.
+
+\begin{thm}
+\label{LIL_rfbm}
+    For any $H \in (0, 1)$,
+    $$\limsup\limits_{t\rightarrow \infty} \frac{Q_{B_{H}}(t)}{(\frac{2}{A^2}\ln{t})^{\frac{1}{2(1-H)}}} = 1 \quad \mathrm{a.s.},$$
+    where $A = \frac{1}{1-H}(\frac{H}{1-H})^{-H}$.
+\end{thm}
+
+On the way of D{\c e}bicki and Kosi{\'n}ski proving the above theorem, they provided an alternative tool for not calculating the integral instead of summation.
+\begin{lemma}[D{\c e}bicki and Kosi{\'n}ski (2017, Theorem 1)]
+\label{integral}
+For all positive and nondecreasing functions $f(t)$ on some interval $[T,\infty)$,
+$$\mathbb{P}(Q_{B_{H}}(t)>f(t)\quad\mathrm{i.o.})=0\quad\mathrm{or}\quad1,$$
+according as the integral
+$$\mathcal{I}_f:=\int_T^\infty\frac{1}{f(u)}\mathbb{P}\left(\sup\limits_{t\in[0,f(u)]}Q_{B_{H}}(t)>f(u)\right)du$$
+is finite or infinite.
+\end{lemma}
+
+Like what had been done to LIL for Brownian motion and its extension, we also want to apply LIL to the extension of reflected fraction Brownian motion.
+
+\begin{thm}
+\label{LIL_mrfbm}
+    For any $H \in (0, 1)$,
+    $$\limsup\limits_{t\rightarrow \infty} \frac{\max \limits_{s\leqslant t}Q_{B_{H}}(s)}{(\frac{2}{A^2}\ln{t})^{\frac{1}{2(1-H)}}} = 1 \quad \mathrm{a.s.},$$
+    where $A = \frac{1}{1-H}(\frac{H}{1-H})^{-H}$.
+\end{thm}
+
+\newpage
+\section{Proofs of the main results}
+\subfile{proof1.tex}
+\newpage
+\subfile{proof2.tex}
+\newpage
+\subfile{proof3.tex}
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{CJK*}
+\end{document}
+

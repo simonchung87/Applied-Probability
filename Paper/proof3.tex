@@ -1,0 +1,46 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\begin{proof}[Proof of Theorem \ref{LIL_mrfbm}]
+Let $S>0$ be any fixed number, 
+$$a_0 = S,\;y_0 = f(a_0),\;b_0 = a_0+y_0.$$
+For $i>0$,
+$$a_i = b_{i-1},\;y_i = f(a_i),\;b_i = a_i+y_i.$$
+
+Like we did in the proof of Theorems \ref{LIL_mabm} and Theorem \ref{LIL_rfbm}, we can divide the proof into two steps,
+\begin{equation}
+\label{mrfbm1}
+	\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}Q_{B_H}(s)}{(\frac{2}{A^2}\ln t)^\frac{1}{2(1-H)}}\geqslant 1\quad\mathrm{a.s.}
+\end{equation}
+and
+\begin{equation}
+\label{mrfbm2}
+	\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}Q_{B_H}(s)}{(\frac{2}{A^2}\ln t)^\frac{1}{2(1-H)}}\leqslant 1\quad\mathrm{a.s.}
+\end{equation}
+Since $\frac{\max\limits_{0\leqslant s\leqslant t}Q_{B_H}(s)}{(\frac{2}{A^2}\ln t)^\frac{1}{2(1-H)}}\geqslant\frac{Q_{B_H}(t)}{(\frac{2}{A^2}\ln t)^\frac{1}{2(1-H)}}$, by Theorem \ref{LIL_rfbm}, (\ref{mrfbm1}) holds.
+
+On the other hand, in order to prove (\ref{mrfbm2}), we use the same structure as in the proof of Theorem 1 in D{\c e}bicki and Kosi{\'n}ski (2017) and the result of Theorem 2 in this article. There exist $N\in\mathbb{N}$ such that when $T\geqslant N$,
+$$\sum^{\infty}_{k=\floor*{T}}\mathbb{P}\left(\sup\limits_{t\in[0,f_p(b_k)]}Q_{B_H}(t)\geqslant f_p(b_k)\right)<\int_T^\infty\frac{1}{f_p(u)}\mathbb{P}\left(\sup\limits_{t\in[0,f_p(u)]}Q_{B_{H}}(t)>f_p(u)\right)du<\infty,$$
+where $p$ is in a suitable range.
+
+Since$$\sum^{\infty}_{k=1}\mathbb{P}\left(\sup\limits_{t\in[0,f_p(b_k)]}Q_{B_H}(t)\geqslant f_p(b_k)\right)\leqslant T + \sum^{\infty}_{k=\floor*{T}}\mathbb{P}\left(\sup\limits_{t\in[0,f_p(b_k)]}Q_{B_H}(t)\geqslant f_p(b_k)\right)<\infty,$$
+by Borel-Cantelli Lemma,
+$$\mathbb{P}\left(\limsup\limits_{k\to\infty}\left\{\sup\limits_{t\in[0,f_p(b_k)]}Q_{B_H}(t)\geqslant f_p(b_k)\right\}\right)=0.$$
+However, since this partition can change with the value of $S$, which means that the event with continuous time has the same probability measure as events applied with the partition in the begining, 
+we can acquire that
+$$\mathbb{P}\left(\limsup\limits_{t\to\infty}\left\{\max\limits_{0\leqslant s \leqslant t}Q_{B_H}(t)\geqslant f_p(t)\right\}\right)=0.$$
+The above equation is equivalent to
+$$\mathbb{P}\left(\limsup\limits_{t\to\infty}\left\{\max\limits_{0\leqslant s \leqslant t}Q_{B_H}(t)\geqslant (1+\epsilon)\left(\frac{2}{A^2}\ln t\right)^{\frac{1}{2(1-H)}}\right\}\right)=0$$
+for any $\epsilon>0$ since $f_p(s)= \left(\frac{2}{A^2}(\ln s + (1+c_H-p)\ln\ln s)\right)^{\frac{1}{2(1-H)}}$.
+If we take the complement set of the above equation, it follows that
+$$\mathbb{P}\left(\liminf\limits_{t\to\infty}\left\{\max\limits_{0\leqslant s \leqslant t}Q_{B_H}(t)\leqslant (1+\epsilon)\left(\frac{2}{A^2}\ln t\right)^{\frac{1}{2(1-H)}}\right\}\right)=1.$$
+Moreover,
+\begin{align*}
+	&\mathbb{P}\left(\liminf\limits_{t\to\infty}\left\{\max\limits_{0\leqslant s \leqslant t}Q_{B_H}(t)\leqslant (1+\epsilon)\left(\frac{2}{A^2}\ln t\right)^{\frac{1}{2(1-H)}}\right\}\right)\\
+	&=\mathbb{P}\left(\exists t_0\in\mathbb{R}^+,\,\mathrm{s.t.\, if\,}t\geqslant t_0\mathrm{,\,then}\max\limits_{0\leqslant s \leqslant t}Q_{B_H}(t)\leqslant (1+\epsilon)\left(\frac{2}{A^2}\ln t\right)^{\frac{1}{2(1-H)}}\right)\\
+	&\leqslant\mathbb{P}\left(\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}Q_{B_H}(s)}{\left(\frac{2}{A^2}\ln t\right)^\frac{1}{2(1-H)}}\leqslant 1\right)\leqslant1.
+\end{align*}
+The inequality before the last one holds for the same reason in the proof of Theorem \ref{LIL_mabm}.
+
+Hence, we finish our proof by having (\ref{mrfbm2}) holds.
+\end{proof}
+\end{document}

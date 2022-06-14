@@ -1,0 +1,64 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\begin{proof}[Proof of Theorem \ref{LIL_mabm}]
+Let $f(t) = \sqrt{2t\ln\ln t}$, $t_n=\alpha^n$ for any $\alpha>1$ and $E_n:=\left\{\max\limits_{t_n\leqslant t\leqslant t_{n+1}}\frac{\max\limits_{s\leqslant t}B(s)}{(1+\delta) f(t)}>1\right\}$ for any $\delta>0$.
+
+Then we have
+\begin{align*}
+	\mathbb{P}(E_n) &\leqslant \mathbb{P}\left(\max\limits_{t_n\leqslant t\leqslant t_{n+1}}\frac{\max\limits_{s\leqslant t}B(s)}{(1+\delta) f(t_n)}>1\right)
+	\leqslant\mathbb{P}\left(\max\limits_{0\leqslant t\leqslant t_{n+1}}\frac{\max\limits_{s\leqslant t}B(s)}{(1+\delta) f(t_n)}>1\right)\\
+	&=\mathbb{P}\left(\max\limits_{0\leqslant t\leqslant t_{n+1}}B(t)>(1+\delta) f(t_n)\right)
+	=2\mathbb{P}\left(B(t_{n+1})>(1+\delta) f(t_n)\right)\\
+	&\leqslant cn^{-\frac{(1+\delta)^2}{\alpha}},
+\end{align*}
+where the last inequality holds because we already know the distribution of standard Brownian motion and $c$ is a suitable constant. When $\alpha\in(1,(1+\delta)^2)$, by p-series test and comparison theorem, $\sum_{n=1}^\infty\mathbb{P}(E_n)$ converges. By Borel-Cantelli Lemma, $P(\limsup\limits_{n\to\infty}E_n)=0$.
+
+Since
+\begin{align*}
+	\mathbb{P}(\limsup\limits_{n\to\infty}E_n) &= \mathbb{P}\left(\bigcap^\infty_{k=1}\bigcup^\infty_{n\geqslant k}\left\{\max\limits_{t_n\leqslant t\leqslant t_{n+1}}\frac{\max\limits_{s\leqslant t}B(s)}{(1+\delta)f(t)}>1\right\}\right)\\
+	&\geqslant\mathbb{P}\left(\bigcap^\infty_{k=1}\bigcup^\infty_{n\geqslant k}\left\{\max\limits_{t_n\leqslant t\leqslant t_{n+1}}\frac{\max\limits_{s\leqslant t}B(s)}{(1+\delta)f(t_{n+1})}>1\right\}\right)\\
+	&=\mathbb{P}\left(\bigcap^\infty_{k=1}\bigcup^\infty_{n\geqslant k}\left\{\frac{\max\limits_{0\leqslant s\leqslant t_{n+1}}B(s)}{f(t_{n+1})}>1+\delta\right\}\right)\geqslant0,\\
+\end{align*}
+we have
+$$\mathbb{P}\left(\bigcup^\infty_{k=1}\bigcap^\infty_{n\geqslant k}\left\{\frac{\max\limits_{0\leqslant s\leqslant t_{n+1}}B(s)}{f(t_{n+1})}\leqslant1+\delta\right\}\right)=1.$$
+Moreover,
+\begin{align*}
+	&\mathbb{P}\left(\bigcup^\infty_{k=1}\bigcap^\infty_{n\geqslant k}\left\{\frac{\max\limits_{0\leqslant s\leqslant t_{n+1}}B(s)}{f(t_{n+1})}\leqslant1+\delta\right\}\right)\\
+	&=\mathbb{P}\left(\exists n_0\in\mathbb{N}, \,\mathrm{s.t.}\,\mathrm{if}\,n>n_0\mathrm{, then}\frac{\max\limits_{0\leqslant s\leqslant t_{n+1}}B(s)}{f(t_{n+1})}\leqslant1+\delta\right)\\
+	&\leqslant\mathbb{P}\left(\limsup\limits_{n\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t_{n+1}}B(s)}{f(t_{n+1})}\leqslant1+\delta\right)\leqslant1.
+\end{align*}
+The inequality before the last one holds because the greatest cluster point of that fraction is smaller than $1+\delta$, which means all cluster point is smaller than $1+\delta$. And a point is a cluster point if and only if there are infinitely points in its neighbor. Therefore, we have 
+$$\mathbb{P}\left(\limsup\limits_{n\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t_{n+1}}B(s)}{f(t_{n+1})}\leqslant1+\delta\right)=1.$$
+Since $\delta$ is abitary, we have probability one that
+\begin{equation}
+\label{lilmbm1}
+	\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}B(s)}{f(t)}\leqslant1.
+\end{equation}
+On the other hand, 
+\begin{equation}
+\label{lilmbm2}
+	\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}B(s)}{f(t)}\geqslant\limsup\limits_{t\to\infty}\frac{B(s)}{f(t)}=1\quad\mathrm{a.s.}
+\end{equation}
+By (\ref{lilmbm1}) and (\ref{lilmbm2}), we can complete the first part of the proof
+$$\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}B(s)}{f(t)}=1\quad\mathrm{a.s.}$$
+Since $|B(t)|=B^+(t)\vee B^-(t)$, where $a \vee b:=\max\{a,b\}$, we have
+$$\max\limits_{0\leqslant s\leqslant t}|B(s)|=\max\limits_{0\leqslant s\leqslant t}\left\{B^+(s)\vee B^-(s)\right\}=\max\limits_{0\leqslant s\leqslant t}B^+(t)\vee\max\limits_{0\leqslant s\leqslant t}B^-(t).$$
+Moreover,  
+$$\max\limits_{s\leqslant t} B^+(t)=\max\limits_{s\leqslant t} (B(t)\vee 0)=\max\limits_{s\leqslant t} B(t),$$
+which means that
+$$\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}B^+(s)}{f(t)}=\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}B(s)}{f(t)}=1\quad\mathrm{a.s.}$$
+By symmetry property, we have
+$$\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}B^-(s)}{f(t)}=1\quad\mathrm{a.s.}$$
+Therefore, 
+\begin{align*}
+	\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}|B(s)|}{f(t)}
+	&=\limsup\limits_{t\to\infty}\left(\frac{\max\limits_{0\leqslant s\leqslant t}B^+(s)}{f(t)}\bigvee\frac{\max\limits_{0\leqslant s\leqslant t}B^-(s)}{f(t)}\right)\\
+	&\leqslant \left(\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}B^+(s)}{f(t)}\right)\bigvee\left(\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}B^-(s)}{f(t)}\right)\\
+	&=1\quad\mathrm{a.s.}
+\end{align*}
+As for another part,
+$$\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}|B(s)|}{f(t)}\geqslant\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}B(s)}{f(t)}=1.$$
+Hence, we can finish the proof with
+$$\limsup\limits_{t\to\infty}\frac{\max\limits_{0\leqslant s\leqslant t}|B(s)|}{f(t)}=1\quad\mathrm{a.s.}$$
+\end{proof}
+\end{document}

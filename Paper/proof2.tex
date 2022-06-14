@@ -1,0 +1,78 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\begin{proof}[Proof of Theorem \ref{LIL_rfbm}]
+Let $$\tau_0 = \frac{H}{1-H}\;,a = \frac{1}{2\tau_{0}^{2H}}\;,B = H\left(\frac{H}{1-H}\right)^{-H-2}\;,b = \frac{B}{2A},$$
+$$\mathcal{H}_{B_{H}}=\lim\limits_{T\to\infty}T^{-1}\mathbb{E}\exp\left(\sup\limits_{t\in[0,T]}(\sqrt{2}B_{H}(t)-t^{2H})\right)\in(0,\infty),$$
+$\Psi(u)=\frac{1}{\sqrt{2\pi}}\int_{u}^{\infty}\exp(-\frac{1}{2}x^2)dx,$
+$f_p(s)= \left(\frac{2}{A^2}g(s)\right)^{\frac{1}{2(1-H)}}$ and $g(s)=\ln s + (1+c_H-p)\ln\ln s$ for $p\in\mathbb{R}$, $c_H = \frac{1}{H}-1-\frac{1}{2(1-H)}$ and $H\in(0,1)$\\
+Like the proof of Theorem \ref{LIL_mabm}, we can be separated it into two parts, which is
+\begin{equation}
+	\limsup\limits_{t\rightarrow \infty} \frac{Q_{B_{H}}(t)}{(\frac{2}{A^2}\ln{t})^{\frac{1}{2(1-H)}}}\geqslant1\quad\mathrm{a.s.}
+\end{equation}
+and
+\begin{equation}
+	\limsup\limits_{t\rightarrow \infty} \frac{Q_{B_{H}}(t)}{(\frac{2}{A^2}\ln{t})^{\frac{1}{2(1-H)}}}\leqslant1\quad\mathrm{a.s.}.
+\end{equation} 
+Since we need to calculate the integral in Lemma \ref{integral}, we need the tail probability of $Q_{B_H}$, which has been given by Piterbarg in 2001 \citep{piterbarg2001large}. Namely, for any $T>0$,
+\begin{equation}
+\label{tail_probability}
+	\mathbb{P}\left(\sup\limits_{[0,Tu]}Q_{B_{H}}(t)>u\right)=\sqrt{\pi}a^{\frac{2}{H}}b^{-\frac{1}{2}}T\mathcal{H}_{B_{H}}^2(Au^{1-H})^{\frac{2}{H}-1}\Psi(Au^{1-H})(1+o(1)).
+\end{equation}
+
+ Suppose $u_1$ is large enough such that equation (\ref{tail_probability}) holds when $u>u_1$. Let $T=1$, we have
+ \begin{align*}
+ 	I(u)&:=\frac{1}{f_p(u)} \mathbb{P}\left(\sup\limits_{[0,f_p(u)]}Q_{B_{H}(t)}>f_p(u)\right)\\
+ 	&=\sqrt{\pi}a^{\frac{2}{H}}b^{-\frac{1}{2}}\mathcal{H}_{B_{H}}^2(Af_p(u)^{1-H})^{\frac{2}{H}-1}\Psi(Af_p(u)^{1-H})f_p(u)^{-1}(1+o(1))\\
+ 	&=\kappa\frac{\int^\infty_{\sqrt{2g(u)}}\exp{(-\frac{1}{2}x^2)dx}}{g(u)^{-(c_H+\frac{1}{2})}},\\ 
+ 	&\mathrm{where}\;\kappa=a^{\frac{2}{H}}b^{-\frac{1}{2}}\mathcal{H}_{B_{H}}^22^{c_H}A^{-\frac{1}{2(1-H))}}(1+o(1)).
+\end{align*}
+
+Since
+$$\lim\limits_{t\to\infty}\frac{\Psi\left(\sqrt{2t}\right)}{\frac{1}{\sqrt{4\pi t}}\exp(-t)}=\lim\limits_{t\to\infty}\frac{t^{-\frac{1}{2}}}{\frac{1}{2}t^{-\frac{3}{2}}+t^{-\frac{1}{2}}}=1,$$
+there exists $u_2\geqslant u_1$ large enough such that for $u\geqslant u_2$,
+$$I(u)=\kappa\frac{\frac{1}{\sqrt{2\pi}}\frac{1}{\sqrt{2g(u)}}\exp(-g(u))\left(1+o(1)\right)}{g(u)^{-(c_H+\frac{1}{2})}}=\kappa'\frac{\left(\ln{u}+(1+c_H-p)\ln{\ln{u}}\right)^{c_H}}{u(\ln{u})^{1+c_H-p}},$$
+where $\kappa'=\frac{\kappa}{2\sqrt{\pi}}(1+o(1))$.
+
+Hence, we can conclude that
+\begin{align*}
+	\mathcal{I}_f=\int^\infty_TI(u)du=\infty\,\mathrm{if}\,
+	\left\{
+		\begin{array}{lr}
+			H\in(0,\frac{2}{3}]\;\mathrm{and}\;p = 1+c_H;\\
+			H\in(\frac{2}{3},1)\;\mathrm{and}\;p = 1;
+		\end{array}
+	\right.
+\end{align*}
+By Lemma \ref{integral},
+$$\mathbb{P}\left(Q_{B_{H}}(t)>f_p(t)\quad\mathrm{i.o.}\right)=1\quad\mathrm{for\;all\;}H\in(0,1)\mathrm{\;for\;some\;}p.$$
+Then 
+$$\limsup\limits_{t\to\infty}\frac{Q_{B_{H}}(t)}{f_p(t)}\geqslant1\quad\mathrm{a.s.}$$
+Since
+$$\lim_{t\to\infty}\frac{f_p(t)}{(\frac{2}{A^{2}}\ln t)^{\frac{1}{2(1-H)}}}=\lim_{t\to\infty}\frac{\left(\frac{2}{A^{2}}(\ln{t} + (1+c_H-p)\ln{\ln{t}})\right)^{\frac{1}{2(1-H)}}}{(\frac{2}{A^{2}}\ln t)^{\frac{1}{2(1-H)}}}=1,$$
+we have
+\begin{equation}
+\label{lilrfbm1}
+	\limsup\limits_{t\to\infty}\frac{Q_{B_H}(t)}{(\frac{2}{A^{2}}\ln t)^{\frac{1}{2(1-H)}}}=\limsup\limits_{t\to\infty}\frac{Q_{B_{H}}(t)}{f_p(t)}\frac{f_p(t)}{(\frac{2}{A^{2}}\ln t)^{\frac{1}{2(1-H)}}}\geqslant1\quad\mathrm{a.s.}
+\end{equation}
+Similarly,
+\begin{align*}
+	\mathcal{I}_f=\int^\infty_TI(u)du<\infty,\,\mathrm{if}\,
+	\left\{
+		\begin{array}{lr}
+			H\in(0,\frac{2}{3}]\;\mathrm{\,and}\;p = -1;\\
+			H\in(\frac{2}{3},1]\;\mathrm{\,and}\;p = 1+c_H;
+		\end{array}
+	\right.
+\end{align*}
+Also, by Lemma \ref{integral},
+$$\mathbb{P}\left(Q_{B_{H}}(t)>f_p(t)\quad\mathrm{i.o.}\right)=0\quad\mathrm{for\;all\;}H\in(0,1)\mathrm{\;and\;for\;some\;}p.$$
+So we have
+$$\limsup\limits_{t\to\infty}\frac{Q_{B_{H}}(t)}{f_p(t)}\leqslant1\quad\mathrm{a.s.}$$
+Then,
+\begin{equation}
+\label{lilrfbm2}
+	\limsup\limits_{t\to\infty}\frac{Q_{B_{H}}(t)}{(\frac{2}{A^{2}}\ln t)^{\frac{1}{2(1-H)}}}=\limsup\limits_{t\to\infty}\frac{Q_{B_{H}}(t)}{f_p(t)}\frac{f_p(t)}{(\frac{2}{A^{2}}\ln t)^{\frac{1}{2(1-H)}}}\leqslant1\quad\mathrm{a.s.}
+\end{equation}
+By (\ref{lilrfbm1}) and (\ref{lilrfbm2}), the proof is completed.
+\end{proof}
+\end{document}
