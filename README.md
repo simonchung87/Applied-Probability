@@ -39,7 +39,7 @@ After collecting finite data points of the ratio of the stochastic process and t
 </p>
 We can see that the mean of the data points is very close to 1.
 
-For the second method, we encounter some trouble in the simulation. By the definiton of $\limsup$, the value should be the greatest cluster points. The definition of cluster points $x$ is: $\forall \epsilon >0$, there are infinity points in the neighbour of $x$ - $N_{\epsilon}(x)$. With this definition, we can use **DBSCAN** as our clustering method. However, since we do not know how many cluster points within our data, which is a pre-defined parameter for this particular algorithm, the greatest cluster point obtained from this method is fairly unstable.
+For the second method, we encounter some trouble in the simulation. By the definiton of $\limsup$, the value should be the greatest cluster points. The definition of cluster points $x$ is: $$\forall \epsilon >0, N_{\epsilon}(x) \text{ contains infinitely many points}.$$ With this definition, we can use **DBSCAN** as our clustering method. However, since we do not know how many cluster points within our data, which is a pre-defined parameter for this particular algorithm, the greatest cluster point obtained from this method is fairly unstable.
 
 
 
