@@ -1,5 +1,5 @@
 # Applied Probability:<br /> Law of Iterated Logarithm for Extensions of Brownian motion<br />
-This is a joint work with Prof. Mayru Chen in Applied Mathematics Department, NSYSU.
+This is a joint work with Prof. Mayru Chen in Department of Applied Mathematics, NSYSU.
 
 This research has been published in The 29th South Taiwan Statistics Conference: Applied Probability Section.
 
