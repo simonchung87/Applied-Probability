@@ -14,7 +14,7 @@ The stochastic processes I was investigating are:
 - Reflected Fraction Brownian Motion $$Q_{B_{H}}(t)=B_H(t)-ct+\max(Q_{B_{H}}(0),-\inf\limits_{s\in [0,t]}(B_H(s)-cs)),$$ where $B_H$ is the standard fractional Brownian motion
 - Maximum Process of Reflected Fraction Brownian Motion $M_{Q_{B_{H}}}(t) = \max\limits_{s\leqslant t}{Q_{B_{H}}(s)}$
 
-In this paper, we provide the closed-form of the limiting functions for these three processes and rigorous mathematical proof.
+In this paper, we provide the exact form of the limiting functions for these three processes and rigorous mathematical proof.
 
 ## Simulation
 
